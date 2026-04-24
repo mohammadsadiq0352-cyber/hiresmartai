@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HireSmart - AI-Powered Resume Screener</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Outfit:wght@500;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body class="landing-body">
+    <div class="app-layout">
+        <aside class="sidebar">
+            <div class="sidebar-icon active">
+                <span class="icon">🎯</span>
+            </div>
+            <div class="sidebar-icon" onclick="location.href='auth.html?role=user'">
+                <span class="icon">🪄</span>
+            </div>
+        </aside>
+
+        <main class="main-content">
+            <div class="landing-hero" style="animation: fadeIn 0.8s ease-out;">
+                <h1 style="background: linear-gradient(135deg, var(--text-main) 0%, var(--primary) 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">HireSmart AI</h1>
+                <p class="subtitle">The intelligent bridge between elite talent and global opportunity.</p>
+            </div>
+
+            <div class="role-cards-container">
+                <div class="glass-card role-card" onclick="location.href='candidates.html'">
+                    <div class="role-icon">👤</div>
+                    <h3>For Candidates</h3>
+                    <p>Analyze your resume against any job description. Get instant feedback on match scores and missing
+                        keywords.
+                    </p>
+                    <div style="margin-top: 20px; color: #4a90e2; font-weight: 700;">Learn More →</div>
+                </div>
+
+                <div class="glass-card role-card" onclick="location.href='hr-professionals.html'">
+                    <div class="role-icon">🏢</div>
+                    <h3>For HR Professionals</h3>
+                    <p>Screen hundreds of resumes in seconds. Rank candidates by relevance and identify top talent
+                        effortlessly.
+                    </p>
+                    <div style="margin-top: 20px; color: #4a90e2; font-weight: 700;">Learn More →</div>
+                </div>
+            </div>
+
+            <footer class="footer">
+                <p>&copy; 2026 HireSmart AI. Precision screening Powered by NLP.</p>
+            </footer>
+        </main>
+    </div>
+
+    <!-- Floating Info Button -->
+    <div class="info-button">
+        <span>i</span>
+    </div>
+    <script src="auth.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const userJson = localStorage.getItem('user');
+            if (userJson) {
+                const user = JSON.parse(userJson);
+                const logoutDiv = document.getElementById('logout-container');
+                if (logoutDiv) logoutDiv.style.display = 'block';
+
+                const cards = document.querySelectorAll('.role-card');
+                if (user.role === 'hr' && cards[1]) {
+                    const hrCard = cards[1];
+                    const title = hrCard.querySelector('h3');
+                    const description = hrCard.querySelector('p');
+                    const linkText = hrCard.querySelector('div[style*="margin-top: 20px"]');
+                    if (title) title.innerText = 'Welcome Back, ' + (user.name ? user.name.split(' ')[0] : 'HR') + '!';
+                    if (description) description.innerText = 'You are logged in as an HR Professional. Access your dashboard below.';
+                    if (linkText) linkText.innerText = 'Go to HR Dashboard →';
+                    hrCard.onclick = (e) => { e.preventDefault(); location.href = 'hr-dashboard.html'; };
+                } else if (user.role === 'user' && cards[0]) {
+                    const candCard = cards[0];
+                    const title = candCard.querySelector('h3');
+                    const description = candCard.querySelector('p');
+                    const linkText = candCard.querySelector('div[style*="margin-top: 20px"]');
+                    if (title) title.innerText = 'Welcome Back, ' + (user.name ? user.name.split(' ')[0] : 'Candidate') + '!';
+                    if (description) description.innerText = 'You are logged in as a candidate. Access your dashboard below.';
+                    if (linkText) linkText.innerText = 'Go to Candidate Dashboard →';
+                    candCard.onclick = (e) => { e.preventDefault(); location.href = 'candidate-dashboard.html'; };
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>

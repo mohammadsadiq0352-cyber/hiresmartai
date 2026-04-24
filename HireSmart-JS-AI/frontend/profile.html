@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HireSmart - Candidate Profile</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Outfit:wght@500;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background: #0f172a !important;
+            background-image:
+                radial-gradient(ellipse 70% 50% at 85% 10%, rgba(16,185,129,0.18) 0%, transparent 55%),
+                radial-gradient(ellipse 50% 40% at 15% 85%, rgba(59,130,246,0.15) 0%, transparent 50%),
+                linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px) !important;
+            background-size: auto, auto, 50px 50px, 50px 50px !important;
+            font-family: 'Inter', sans-serif;
+            color: #f1f5f9;
+            min-height: 100vh;
+        }
+
+        .top-header {
+            background: rgba(15,23,42,0.9) !important;
+            border-bottom: 1px solid rgba(255,255,255,0.07);
+            backdrop-filter: blur(12px);
+        }
+
+        .logo-section { color: #6ee7b7 !important; }
+
+        .profile-dropdown { background: #1e293b !important; border-color: rgba(255,255,255,0.1) !important; }
+        .profile-dropdown::before { background: #1e293b !important; border-color: rgba(255,255,255,0.1) !important; }
+        .dropdown-item { color: #cbd5e1 !important; }
+        .dropdown-item:hover { background: rgba(255,255,255,0.05) !important; color: #6ee7b7 !important; }
+        .dropdown-item.logout { color: #f87171 !important; border-top-color: rgba(255,255,255,0.07) !important; }
+        .dropdown-item.logout:hover { background: rgba(239,68,68,0.1) !important; }
+
+        .page-wrap {
+            max-width: 860px;
+            margin: 40px auto;
+            padding: 0 20px 60px;
+        }
+
+        .btn-back {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: #64748b;
+            font-weight: 600;
+            font-size: 14px;
+            cursor: pointer;
+            margin-bottom: 24px;
+            background: none;
+            border: none;
+            padding: 0;
+            transition: color 0.2s;
+        }
+        .btn-back:hover { color: #6ee7b7; }
+
+        /* Hero */
+        .profile-hero {
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 24px;
+            padding: 36px;
+            display: flex;
+            align-items: center;
+            gap: 32px;
+            margin-bottom: 24px;
+            backdrop-filter: blur(12px);
+        }
+
+        .avatar-wrapper { position: relative; flex-shrink: 0; }
+
+        .avatar-img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background: rgba(16,185,129,0.2);
+            border: 3px solid rgba(16,185,129,0.4);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 36px;
+            font-weight: 800;
+            color: #6ee7b7;
+            overflow: hidden;
+        }
+
+        .avatar-img img { width: 100%; height: 100%; object-fit: cover; border-radius: 50%; }
+
+        .avatar-edit-btn {
+            position: absolute;
+            bottom: 2px; right: 2px;
+            width: 28px; height: 28px;
+            background: #10b981;
+            border: 2px solid #0f172a;
+            border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            cursor: pointer; font-size: 12px;
+            transition: background 0.2s;
+        }
+        .avatar-edit-btn:hover { background: #059669; }
+
+        .hero-info h1 { font-size: 26px; font-weight: 800; color: #f1f5f9; margin-bottom: 6px; }
+
+        .hero-tag {
+            display: inline-flex; align-items: center; gap: 6px;
+            background: rgba(16,185,129,0.15);
+            color: #6ee7b7;
+            border: 1px solid rgba(16,185,129,0.25);
+            padding: 4px 12px; border-radius: 20px;
+            font-size: 13px; font-weight: 600; margin-bottom: 8px;
+        }
+
+        .hero-email { color: #64748b; font-size: 14px; }
+
+        /* Cards */
+        .card {
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 20px;
+            padding: 28px;
+            margin-bottom: 24px;
+            backdrop-filter: blur(10px);
+        }
+
+        .card-title {
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: #64748b;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        /* Storage bar */
+        .storage-info {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+            font-size: 14px;
+        }
+
+        .storage-used { font-weight: 700; color: #f1f5f9; }
+        .storage-total { color: #64748b; }
+
+        .storage-bar-bg {
+            width: 100%;
+            height: 10px;
+            background: rgba(255,255,255,0.08);
+            border-radius: 10px;
+            overflow: hidden;
+            margin-bottom: 8px;
+        }
+
+        .storage-bar-fill {
+            height: 100%;
+            border-radius: 10px;
+            background: linear-gradient(90deg, #10b981, #6ee7b7);
+            transition: width 0.5s ease;
+        }
+
+        .storage-bar-fill.warn { background: linear-gradient(90deg, #f59e0b, #fcd34d); }
+        .storage-bar-fill.danger { background: linear-gradient(90deg, #ef4444, #fca5a5); }
+
+        .storage-remaining { font-size: 13px; color: #64748b; text-align: right; }
+
+        /* Upload zone */
+        .upload-zone {
+            border: 2px dashed rgba(16,185,129,0.3);
+            border-radius: 14px;
+            padding: 32px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.2s;
+            margin-top: 20px;
+            background: rgba(16,185,129,0.03);
+        }
+
+        .upload-zone:hover, .upload-zone.drag-over {
+            border-color: #10b981;
+            background: rgba(16,185,129,0.08);
+        }
+
+        .upload-zone p { color: #64748b; font-size: 14px; margin: 8px 0 16px; }
+
+        .btn-upload {
+            background: #10b981;
+            color: white;
+            padding: 10px 24px;
+            border-radius: 10px;
+            border: none;
+            font-weight: 700;
+            font-size: 14px;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .btn-upload:hover { background: #059669; transform: translateY(-1px); }
+
+        /* Resume list */
+        .resume-list { margin-top: 20px; display: flex; flex-direction: column; gap: 12px; }
+
+        .resume-item {
+            background: rgba(255,255,255,0.04);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 12px;
+            padding: 14px 18px;
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+
+        .resume-icon { font-size: 24px; flex-shrink: 0; }
+
+        .resume-meta { flex: 1; min-width: 0; }
+        .resume-name { font-weight: 600; color: #e2e8f0; font-size: 14px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+        .resume-size { font-size: 12px; color: #64748b; margin-top: 2px; }
+
+        .resume-actions { display: flex; gap: 8px; flex-shrink: 0; }
+
+        .btn-action {
+            padding: 6px 14px;
+            border-radius: 8px;
+            border: none;
+            font-size: 12px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .btn-analyze-resume {
+            background: rgba(99,102,241,0.2);
+            color: #a5b4fc;
+            border: 1px solid rgba(99,102,241,0.3);
+        }
+        .btn-analyze-resume:hover { background: rgba(99,102,241,0.35); }
+
+        .btn-delete-resume {
+            background: rgba(239,68,68,0.15);
+            color: #fca5a5;
+            border: 1px solid rgba(239,68,68,0.25);
+        }
+        .btn-delete-resume:hover { background: rgba(239,68,68,0.3); }
+
+        .empty-state { text-align: center; padding: 30px; color: #475569; font-size: 14px; }
+        .empty-state .empty-icon { font-size: 40px; margin-bottom: 10px; }
+
+        /* Analyze modal */
+        .modal-overlay {
+            position: fixed; inset: 0;
+            background: rgba(0,0,0,0.6);
+            display: none; align-items: center; justify-content: center;
+            z-index: 2000;
+        }
+        .modal-overlay.open { display: flex; }
+
+        .modal-box {
+            background: #1e293b;
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 20px;
+            padding: 36px;
+            width: 90%;
+            max-width: 560px;
+            animation: slideUp 0.3s ease;
+        }
+
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to   { opacity: 1; transform: translateY(0); }
+        }
+
+        .modal-box h3 { font-size: 20px; font-weight: 800; color: #f1f5f9; margin-bottom: 6px; }
+        .modal-box p  { color: #64748b; font-size: 14px; margin-bottom: 20px; }
+
+        .modal-box textarea {
+            width: 100%;
+            height: 160px;
+            background: rgba(255,255,255,0.06);
+            border: 1.5px solid rgba(255,255,255,0.1);
+            border-radius: 12px;
+            color: #f1f5f9;
+            font-family: inherit;
+            font-size: 14px;
+            padding: 14px;
+            resize: vertical;
+            box-sizing: border-box;
+            margin-bottom: 16px;
+        }
+        .modal-box textarea:focus { outline: none; border-color: #10b981; }
+        .modal-box textarea::placeholder { color: #475569; }
+
+        .modal-actions { display: flex; gap: 12px; justify-content: flex-end; }
+
+        .btn-cancel {
+            padding: 10px 20px; border-radius: 10px;
+            background: rgba(255,255,255,0.06);
+            border: 1px solid rgba(255,255,255,0.1);
+            color: #94a3b8; font-weight: 600; cursor: pointer;
+        }
+        .btn-cancel:hover { background: rgba(255,255,255,0.1); }
+
+        .btn-run {
+            padding: 10px 24px; border-radius: 10px;
+            background: #10b981; color: white;
+            border: none; font-weight: 700; cursor: pointer;
+            transition: all 0.2s;
+        }
+        .btn-run:hover { background: #059669; }
+
+        /* Result area */
+        .result-area {
+            margin-top: 16px;
+            background: rgba(255,255,255,0.04);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 12px;
+            padding: 16px;
+            display: none;
+        }
+        .result-area.show { display: block; }
+        .result-score { font-size: 28px; font-weight: 800; color: #6ee7b7; }
+        .result-label { font-size: 13px; color: #64748b; margin-bottom: 10px; }
+        .result-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10px; }
+        .rtag { padding: 4px 12px; border-radius: 20px; font-size: 12px; font-weight: 600; }
+        .rtag.match { background: #064e3b; color: #6ee7b7; }
+        .rtag.miss  { background: #450a0a; color: #fca5a5; }
+
+        /* Toast */
+        .toast {
+            position: fixed; bottom: 28px; right: 28px;
+            background: #1e293b; color: white;
+            padding: 12px 20px; border-radius: 12px;
+            font-weight: 600; font-size: 14px;
+            opacity: 0; transform: translateY(8px);
+            transition: all 0.3s; z-index: 9999;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+        .toast.show { opacity: 1; transform: translateY(0); }
+    </style>
+</head>
+<body>
+    <header class="top-header">
+        <div class="logo-section">
+            <span style="font-size:24px;">🎯</span>
+            <span>HireSmart - Candidate Portal</span>
+        </div>
+        <div class="profile-container">
+            <div class="user-init" id="user-initial">U</div>
+            <div class="profile-dropdown">
+                <div class="dropdown-item" onclick="window.location.href='candidate-dashboard.html'">
+                    <span>🏠</span> Dashboard
+                </div>
+                <div class="dropdown-item logout" onclick="logout()">
+                    <span>🚪</span> Logout
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="page-wrap">
+        <button class="btn-back" onclick="window.location.href='candidate-dashboard.html'">← Back to Dashboard</button>
+
+        <!-- Hero -->
+        <div class="profile-hero">
+            <div class="avatar-wrapper">
+                <div class="avatar-img" id="avatar-display">U</div>
+                <div class="avatar-edit-btn" onclick="document.getElementById('photo-input').click()" title="Change photo">✏️</div>
+                <input type="file" id="photo-input" accept="image/*" style="display:none" onchange="handlePhoto(this)">
+            </div>
+            <div class="hero-info">
+                <h1 id="hero-name">Loading...</h1>
+                <div class="hero-tag">🎓 Candidate</div>
+                <div class="hero-email" id="hero-email"></div>
+            </div>
+        </div>
+
+        <!-- Storage Status -->
+        <div class="card">
+            <div class="card-title">💾 Resume Storage</div>
+            <div class="storage-info">
+                <span class="storage-used" id="storage-used">0 MB</span>
+                <span class="storage-total">of 50 MB</span>
+            </div>
+            <div class="storage-bar-bg">
+                <div class="storage-bar-fill" id="storage-bar" style="width:0%"></div>
+            </div>
+            <div class="storage-remaining" id="storage-remaining">50 MB remaining</div>
+
+            <!-- Upload Zone -->
+            <div class="upload-zone" id="drop-zone" onclick="document.getElementById('resume-input').click()">
+                <div style="font-size:36px;">📄</div>
+                <p>Drag & drop resumes here or click to browse<br><small>PDF, DOC, DOCX supported</small></p>
+                <button class="btn-upload" onclick="event.stopPropagation(); document.getElementById('resume-input').click()">Select Resumes</button>
+                <input type="file" id="resume-input" accept=".pdf,.doc,.docx" multiple style="display:none" onchange="handleResumeUpload(this)">
+            </div>
+
+            <!-- Stored Resumes -->
+            <div class="resume-list" id="resume-list"></div>
+        </div>
+    </div>
+
+    <!-- Analyze Modal -->
+    <div class="modal-overlay" id="analyze-modal">
+        <div class="modal-box">
+            <h3>🎯 Analyze Resume</h3>
+            <p id="modal-filename">Analyzing: resume.pdf</p>
+            <textarea id="jd-input" placeholder="Paste the job description here..."></textarea>
+            <div class="result-area" id="result-area">
+                <div class="result-score" id="result-score">—</div>
+                <div class="result-label" id="result-label"></div>
+                <div class="result-tags" id="result-tags"></div>
+            </div>
+            <div class="modal-actions">
+                <button class="btn-cancel" onclick="closeModal()">Close</button>
+                <button class="btn-run" id="run-btn" onclick="runAnalysis()">Analyze</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="toast" id="toast"></div>
+
+    <script>
+        const API = 'http://localhost:5000';
+        let resumes = [];   // [{_id, filename, size, mimetype, uploadedAt}]
+        let activeResumeId = null;
+        let currentUser = null;
+
+        // ── Init ──────────────────────────────────────────────
+        window.onload = async function() {
+            currentUser = JSON.parse(localStorage.getItem('user') || '{}');
+            if (!currentUser.email) { window.location.href = 'auth.html?role=user'; return; }
+
+            document.getElementById('user-initial').textContent = (currentUser.name || 'U')[0].toUpperCase();
+            document.getElementById('hero-name').textContent = currentUser.name || 'Candidate';
+            document.getElementById('hero-email').textContent = currentUser.email;
+
+            const photo = localStorage.getItem('candidatePhoto');
+            if (photo) setAvatar(photo);
+            else document.getElementById('avatar-display').textContent = (currentUser.name || 'U')[0].toUpperCase();
+
+            await fetchResumes();
+        };
+
+        // ── Photo ─────────────────────────────────────────────
+        function handlePhoto(input) {
+            const file = input.files[0];
+            if (!file) return;
+            if (file.size > 2 * 1024 * 1024) { toast('Image must be under 2MB', false); return; }
+            const reader = new FileReader();
+            reader.onload = e => {
+                localStorage.setItem('candidatePhoto', e.target.result);
+                setAvatar(e.target.result);
+                toast('Profile photo updated');
+            };
+            reader.readAsDataURL(file);
+        }
+
+        function setAvatar(src) {
+            document.getElementById('avatar-display').innerHTML = `<img src="${src}" alt="avatar">`;
+        }
+
+        // ── Fetch resumes from DB ─────────────────────────────
+        async function fetchResumes() {
+            try {
+                const resp = await fetch(`${API}/api/resumes?userId=${encodeURIComponent(currentUser.email)}`);
+                resumes = await resp.json();
+                renderList();
+                updateStorage();
+            } catch(e) {
+                toast('Could not load resumes. Is the server running?', false);
+            }
+        }
+
+        // ── Storage display ───────────────────────────────────
+        function usedBytes() { return resumes.reduce((s, r) => s + (r.size || 0), 0); }
+
+        function formatSize(bytes) {
+            if (bytes < 1024) return bytes + ' B';
+            if (bytes < 1024 * 1024) return (bytes / 1024).toFixed(1) + ' KB';
+            return (bytes / (1024 * 1024)).toFixed(2) + ' MB';
+        }
+
+        function updateStorage() {
+            const MAX = 50 * 1024 * 1024;
+            const used = usedBytes();
+            const pct = Math.min((used / MAX) * 100, 100);
+            const remaining = Math.max(MAX - used, 0);
+
+            document.getElementById('storage-used').textContent = formatSize(used);
+            document.getElementById('storage-remaining').textContent = formatSize(remaining) + ' remaining';
+
+            const bar = document.getElementById('storage-bar');
+            bar.style.width = pct + '%';
+            bar.className = 'storage-bar-fill' + (pct >= 90 ? ' danger' : pct >= 70 ? ' warn' : '');
+        }
+
+        // ── Upload ────────────────────────────────────────────
+        async function handleResumeUpload(input) {
+            const files = Array.from(input.files);
+            let added = 0;
+
+            for (const file of files) {
+                const formData = new FormData();
+                formData.append('resume', file);
+                formData.append('userId', currentUser.email);
+
+                try {
+                    const resp = await fetch(`${API}/api/resumes/upload`, { method: 'POST', body: formData });
+                    const data = await resp.json();
+                    if (!resp.ok) {
+                        toast(data.error || `Failed to upload "${file.name}"`, false);
+                    } else {
+                        added++;
+                    }
+                } catch(e) {
+                    toast(`Upload failed for "${file.name}"`, false);
+                }
+            }
+
+            input.value = '';
+            if (added > 0) {
+                toast(`${added} resume(s) saved to your profile`);
+                await fetchResumes();
+            }
+        }
+
+        // ── Render list ───────────────────────────────────────
+        function renderList() {
+            const container = document.getElementById('resume-list');
+            if (!resumes.length) {
+                container.innerHTML = `<div class="empty-state"><div class="empty-icon">📭</div>No resumes stored yet. Upload some above.</div>`;
+                return;
+            }
+            container.innerHTML = resumes.map(r => `
+                <div class="resume-item">
+                    <div class="resume-icon">${r.mimetype === 'application/pdf' ? '📕' : '📘'}</div>
+                    <div class="resume-meta">
+                        <div class="resume-name" title="${r.filename}">${r.filename}</div>
+                        <div class="resume-size">${formatSize(r.size)} &nbsp;·&nbsp; ${new Date(r.uploadedAt).toLocaleDateString()}</div>
+                    </div>
+                    <div class="resume-actions">
+                        <button class="btn-action btn-analyze-resume" onclick="openModal('${r._id}', '${r.filename}')">🎯 Analyze</button>
+                        <a class="btn-action btn-analyze-resume" href="${API}/api/resumes/${r._id}/file" target="_blank" style="text-decoration:none;display:inline-flex;align-items:center;">⬇ View</a>
+                        <button class="btn-action btn-delete-resume" onclick="deleteResume('${r._id}', '${r.filename}')">🗑 Delete</button>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        // ── Delete ────────────────────────────────────────────
+        async function deleteResume(id, name) {
+            try {
+                const resp = await fetch(`${API}/api/resumes/${id}`, { method: 'DELETE' });
+                if (resp.ok) {
+                    toast(`"${name}" removed`);
+                    await fetchResumes();
+                } else {
+                    const d = await resp.json();
+                    toast(d.error || 'Delete failed', false);
+                }
+            } catch(e) {
+                toast('Delete failed. Is the server running?', false);
+            }
+        }
+
+        // ── Drag & Drop ───────────────────────────────────────
+        const dz = document.getElementById('drop-zone');
+        dz.addEventListener('dragover', e => { e.preventDefault(); dz.classList.add('drag-over'); });
+        dz.addEventListener('dragleave', () => dz.classList.remove('drag-over'));
+        dz.addEventListener('drop', e => {
+            e.preventDefault();
+            dz.classList.remove('drag-over');
+            const fakeInput = { files: e.dataTransfer.files, value: '' };
+            handleResumeUpload(fakeInput);
+        });
+
+        // ── Analyze Modal ─────────────────────────────────────
+        function openModal(id, filename) {
+            activeResumeId = id;
+            document.getElementById('modal-filename').textContent = 'Analyzing: ' + filename;
+            document.getElementById('jd-input').value = '';
+            document.getElementById('result-area').classList.remove('show');
+            document.getElementById('run-btn').textContent = 'Analyze';
+            document.getElementById('run-btn').disabled = false;
+            document.getElementById('analyze-modal').classList.add('open');
+        }
+
+        function closeModal() {
+            document.getElementById('analyze-modal').classList.remove('open');
+            activeResumeId = null;
+        }
+
+        async function runAnalysis() {
+            const jd = document.getElementById('jd-input').value.trim();
+            if (!jd) { toast('Please paste a job description', false); return; }
+            if (!activeResumeId) return;
+
+            const btn = document.getElementById('run-btn');
+            btn.textContent = 'Analyzing...';
+            btn.disabled = true;
+
+            try {
+                const response = await fetch(`${API}/api/resumes/${activeResumeId}/analyze`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ jobDescription: jd })
+                });
+                const r = await response.json();
+
+                if (r.error) { toast(r.error, false); return; }
+
+                document.getElementById('result-score').textContent = r.matchScore + '%';
+                document.getElementById('result-label').textContent = r.classification + ' — ' + (r.summary || '');
+
+                const tagsHtml = [
+                    ...(r.matchedSkills || []).map(s => `<span class="rtag match">✓ ${s}</span>`),
+                    ...(r.missingSkills || []).map(s => `<span class="rtag miss">✗ ${s}</span>`)
+                ].join('');
+                document.getElementById('result-tags').innerHTML = tagsHtml;
+                document.getElementById('result-area').classList.add('show');
+            } catch(e) {
+                toast('Analysis failed. Is the server running?', false);
+            } finally {
+                btn.textContent = 'Analyze Again';
+                btn.disabled = false;
+            }
+        }
+
+        // ── Misc ──────────────────────────────────────────────
+        function toast(msg, ok = true) {
+            const t = document.getElementById('toast');
+            t.textContent = (ok ? '✅ ' : '❌ ') + msg;
+            t.classList.add('show');
+            setTimeout(() => t.classList.remove('show'), 3000);
+        }
+
+        function logout() {
+            const user = JSON.parse(localStorage.getItem('user') || '{}');
+            localStorage.clear();
+            window.location.href = user.role === 'hr' ? 'auth.html?role=hr' : 'auth.html?role=user';
+        }
+    </script>
+</body>
+</html>

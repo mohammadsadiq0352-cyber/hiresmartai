@@ -1,0 +1,31 @@
+[
+  {
+    "id": 1772179381879,
+    "name": "shiva",
+    "email": "shivashankararupula2@gmail.com",
+    "password": "Shiva@2006",
+    "role": "user"
+  },
+  {
+    "id": 1775855802351,
+    "name": "sadiq",
+    "email": "mohammadsadiq0352@gmail.com",
+    "password": "Sadiq123@",
+    "role": "hr",
+    "companyName": "sadiq.co"
+  },
+  {
+    "id": 1776193106843,
+    "name": "md sadiq",
+    "email": "mohammadsadiq9949@gmail.com",
+    "password": "Sadiq@2006!",
+    "role": "user"
+  },
+  {
+    "id": 1776211013456,
+    "name": "manohar",
+    "email": "manohar998e@gmail.com",
+    "password": "Manohar123@",
+    "role": "user"
+  }
+]

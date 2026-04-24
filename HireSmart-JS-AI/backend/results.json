@@ -1,0 +1,604 @@
+[
+  {
+    "fileName": "Resume_1_Eligible.pdf",
+    "userId": "undefined",
+    "resumeHash": "2c02220153eabf63639412a0eefd1c0e",
+    "jdHash": "0d77994590910abcdc01d0322451435a",
+    "matchScore": 83,
+    "classification": "Strong Match",
+    "contactInfo": {
+      "email": "Not found",
+      "phone": "Not found"
+    },
+    "candidateName": "Aarav Reddy",
+    "jdSkills": [
+      "javascript",
+      "sql",
+      "api",
+      "git",
+      "python",
+      "java"
+    ],
+    "matchedSkills": [
+      "sql",
+      "api",
+      "git",
+      "python",
+      "java"
+    ],
+    "missingSkills": [
+      "javascript"
+    ],
+    "summary": "Matches 5 out of 6 key requirements.",
+    "commonKeywords": [
+      "technova",
+      "hyderabad",
+      "summary",
+      "technova",
+      "scalable",
+      "development",
+      "performance",
+      "e",
+      "java",
+      "python",
+      "data",
+      "structures",
+      "algorithms",
+      "api",
+      "development"
+    ],
+    "timestamp": "2026-03-28T06:55:44.490Z"
+  },
+  {
+    "fileName": "Resume_4_Partial.pdf",
+    "userId": "undefined",
+    "resumeHash": "dc7d8fbebf9c90fd2e74e4932c198dbc",
+    "jdHash": "0d77994590910abcdc01d0322451435a",
+    "matchScore": 57,
+    "classification": "Potential Match",
+    "contactInfo": {
+      "email": "Not found",
+      "phone": "Not found"
+    },
+    "candidateName": "Sneha Patel",
+    "jdSkills": [
+      "javascript",
+      "sql",
+      "api",
+      "git",
+      "python",
+      "java"
+    ],
+    "matchedSkills": [
+      "sql",
+      "git",
+      "java"
+    ],
+    "missingSkills": [
+      "javascript",
+      "api",
+      "python"
+    ],
+    "summary": "Matches 3 out of 6 key requirements.",
+    "commonKeywords": [
+      "role",
+      "summary",
+      "seeking",
+      "java",
+      "databases",
+      "sql",
+      "git"
+    ],
+    "timestamp": "2026-03-28T06:55:44.582Z"
+  },
+  {
+    "fileName": "Resume_5_Partial.pdf",
+    "userId": "undefined",
+    "resumeHash": "aaaa56ef8e77283f717911fbec201bdc",
+    "jdHash": "0d77994590910abcdc01d0322451435a",
+    "matchScore": 46,
+    "classification": "Potential Match",
+    "contactInfo": {
+      "email": "Not found",
+      "phone": "Not found"
+    },
+    "candidateName": "Kiran Kumar",
+    "jdSkills": [
+      "javascript",
+      "sql",
+      "api",
+      "git",
+      "python",
+      "java"
+    ],
+    "matchedSkills": [
+      "sql",
+      "python"
+    ],
+    "missingSkills": [
+      "javascript",
+      "api",
+      "git",
+      "java"
+    ],
+    "summary": "Matches 2 out of 6 key requirements.",
+    "commonKeywords": [
+      "summary",
+      "test",
+      "python",
+      "sql"
+    ],
+    "timestamp": "2026-03-28T09:35:00.978Z"
+  },
+  {
+    "fileName": "Resume_1_Eligible.pdf",
+    "userId": "undefined",
+    "resumeHash": "2c02220153eabf63639412a0eefd1c0e",
+    "jdHash": "99f947775bd4fd843725be1e7f571e54",
+    "matchScore": 99,
+    "classification": "Strong Match",
+    "contactInfo": {
+      "email": "Not found",
+      "phone": "Not found"
+    },
+    "candidateName": "Aarav Reddy",
+    "jdSkills": [],
+    "matchedSkills": [],
+    "missingSkills": [],
+    "summary": "No direct technical skill matches found for this position.",
+    "commonKeywords": [
+      "basics",
+      "algorithms",
+      "3",
+      "analysis"
+    ],
+    "timestamp": "2026-03-28T09:36:20.902Z"
+  },
+  {
+    "fileName": "Resume_4_Partial.pdf",
+    "userId": "undefined",
+    "resumeHash": "e27cfce35265dfe82b18eff02aa31de1",
+    "jdHash": "99f947775bd4fd843725be1e7f571e54",
+    "matchScore": 100,
+    "classification": "Strong Match",
+    "contactInfo": {
+      "email": "Not found",
+      "phone": "2026022109405"
+    },
+    "candidateName": "ReportLab PDF",
+    "jdSkills": [],
+    "matchedSkills": [],
+    "missingSkills": [],
+    "summary": "No direct technical skill matches found for this position.",
+    "commonKeywords": [
+      "4"
+    ],
+    "timestamp": "2026-03-28T09:36:20.946Z"
+  },
+  {
+    "fileName": "Resume_5_Partial.pdf",
+    "userId": "undefined",
+    "resumeHash": "aaaa56ef8e77283f717911fbec201bdc",
+    "jdHash": "99f947775bd4fd843725be1e7f571e54",
+    "matchScore": 100,
+    "classification": "Strong Match",
+    "contactInfo": {
+      "email": "Not found",
+      "phone": "Not found"
+    },
+    "candidateName": "Kiran Kumar",
+    "jdSkills": [],
+    "matchedSkills": [],
+    "missingSkills": [],
+    "summary": "No direct technical skill matches found for this position.",
+    "commonKeywords": [],
+    "timestamp": "2026-03-28T09:36:20.992Z"
+  },
+  {
+    "fileName": "Resume_4_Partial.pdf",
+    "userId": "undefined",
+    "resumeHash": "e27cfce35265dfe82b18eff02aa31de1",
+    "jdHash": "0d77994590910abcdc01d0322451435a",
+    "matchScore": 15,
+    "classification": "Not Suitable",
+    "contactInfo": {
+      "email": "Not found",
+      "phone": "2026022109405"
+    },
+    "candidateName": "ReportLab PDF",
+    "jdSkills": [
+      "javascript",
+      "sql",
+      "api",
+      "git",
+      "python",
+      "java"
+    ],
+    "matchedSkills": [],
+    "missingSkills": [
+      "javascript",
+      "sql",
+      "api",
+      "git",
+      "python",
+      "java"
+    ],
+    "summary": "No direct technical skill matches found for this position.",
+    "commonKeywords": [
+      "g"
+    ],
+    "timestamp": "2026-03-28T09:39:04.001Z"
+  },
+  {
+    "fileName": "Sadiq Resume.pdf",
+    "userId": "undefined",
+    "resumeHash": "2e78d76a929113e889c8249f7b9980fd",
+    "jdHash": "e7512612292ae895d2be38016f93e540",
+    "matchScore": 13,
+    "classification": "Not Suitable",
+    "contactInfo": {
+      "email": "mohammadsadiq9949@gmail.com",
+      "phone": "+91 9398996706"
+    },
+    "candidateName": "Mohammad Sadiq",
+    "jdSkills": [
+      "sql",
+      "rest",
+      "machine learning",
+      "git",
+      "python",
+      "java"
+    ],
+    "matchedSkills": [],
+    "missingSkills": [
+      "sql",
+      "rest",
+      "machine learning",
+      "git",
+      "python",
+      "java"
+    ],
+    "summary": "No direct technical skill matches found for this position.",
+    "commonKeywords": [
+      "entry",
+      "hyderabad",
+      "india",
+      "basic",
+      "problem",
+      "solving",
+      "b",
+      "tech",
+      "diploma",
+      "computer",
+      "science",
+      "basic",
+      "languages",
+      "data",
+      "good"
+    ],
+    "timestamp": "2026-04-10T21:27:33.435Z"
+  },
+  {
+    "fileName": "resume 2.pdf",
+    "userId": "undefined",
+    "resumeHash": "eeeb4d04219149e3702428cf854b6058",
+    "jdHash": "e7512612292ae895d2be38016f93e540",
+    "matchScore": 81,
+    "classification": "Strong Match",
+    "contactInfo": {
+      "email": "yourmail@gmail.com",
+      "phone": "Not found"
+    },
+    "candidateName": "SAMPATH REDDY",
+    "jdSkills": [
+      "sql",
+      "rest",
+      "machine learning",
+      "git",
+      "python",
+      "java"
+    ],
+    "matchedSkills": [
+      "rest",
+      "machine learning",
+      "git",
+      "python",
+      "java"
+    ],
+    "missingSkills": [
+      "sql"
+    ],
+    "summary": "Matches 5 out of 6 key requirements.",
+    "commonKeywords": [
+      "fresher",
+      "entry",
+      "level",
+      "hyderabad",
+      "india",
+      "job",
+      "basic",
+      "programming",
+      "problem",
+      "solving",
+      "diploma",
+      "computer",
+      "science",
+      "basic",
+      "programming"
+    ],
+    "timestamp": "2026-04-14T18:44:07.214Z"
+  },
+  {
+    "fileName": "resume 3 sample.pdf",
+    "userId": "undefined",
+    "resumeHash": "62edebcb2cca110f94244657a071685d",
+    "jdHash": "e7512612292ae895d2be38016f93e540",
+    "matchScore": 69,
+    "classification": "Good Match",
+    "contactInfo": {
+      "email": "mohammadsadiq@gmail.com",
+      "phone": "Not found"
+    },
+    "candidateName": "MOHAMMAD SADIQ",
+    "jdSkills": [
+      "sql",
+      "rest",
+      "machine learning",
+      "git",
+      "python",
+      "java"
+    ],
+    "matchedSkills": [
+      "sql",
+      "git",
+      "python",
+      "java"
+    ],
+    "missingSkills": [
+      "rest",
+      "machine learning"
+    ],
+    "summary": "Matches 4 out of 6 key requirements.",
+    "commonKeywords": [
+      "fresher",
+      "hyderabad",
+      "india",
+      "basic",
+      "problem",
+      "solving",
+      "diploma",
+      "computer",
+      "science",
+      "basic",
+      "languages",
+      "c",
+      "c",
+      "java",
+      "python"
+    ],
+    "timestamp": "2026-04-14T18:44:07.377Z"
+  },
+  {
+    "fileName": "resume 4 sample.pdf",
+    "userId": "undefined",
+    "resumeHash": "31e829082e4249686b14e1d8a92851f2",
+    "jdHash": "e7512612292ae895d2be38016f93e540",
+    "matchScore": 57,
+    "classification": "Potential Match",
+    "contactInfo": {
+      "email": "yourmail@gmail.com",
+      "phone": "Not found"
+    },
+    "candidateName": "SAMPAIAH GOUD",
+    "jdSkills": [
+      "sql",
+      "rest",
+      "machine learning",
+      "git",
+      "python",
+      "java"
+    ],
+    "matchedSkills": [
+      "rest",
+      "machine learning",
+      "git"
+    ],
+    "missingSkills": [
+      "sql",
+      "python",
+      "java"
+    ],
+    "summary": "Matches 3 out of 6 key requirements.",
+    "commonKeywords": [
+      "fresher",
+      "entry",
+      "level",
+      "hyderabad",
+      "india",
+      "looking",
+      "passionate",
+      "basic",
+      "diploma",
+      "computer",
+      "science",
+      "basic",
+      "understanding",
+      "basic",
+      "machine"
+    ],
+    "timestamp": "2026-04-14T18:44:07.494Z"
+  },
+  {
+    "fileName": "resume 5 exact.pdf",
+    "userId": "undefined",
+    "resumeHash": "4a8aa014c4e2fb03c10ffee2ab32afa1",
+    "jdHash": "e7512612292ae895d2be38016f93e540",
+    "matchScore": 94,
+    "classification": "Strong Match",
+    "contactInfo": {
+      "email": "yourmail@gmail.com",
+      "phone": "Not found"
+    },
+    "candidateName": "MOHAMMAD SADIQ",
+    "jdSkills": [
+      "sql",
+      "rest",
+      "machine learning",
+      "git",
+      "python",
+      "java"
+    ],
+    "matchedSkills": [
+      "sql",
+      "rest",
+      "machine learning",
+      "git",
+      "python",
+      "java"
+    ],
+    "missingSkills": [],
+    "summary": "Matches 6 out of 6 key requirements.",
+    "commonKeywords": [
+      "fresher",
+      "entry",
+      "level",
+      "hyderabad",
+      "india",
+      "job",
+      "design",
+      "develop",
+      "maintain",
+      "basic",
+      "programming",
+      "problem",
+      "solving",
+      "develop",
+      "maintain"
+    ],
+    "timestamp": "2026-04-14T18:44:07.633Z"
+  },
+  {
+    "fileName": "Resume_1_Eligible.pdf",
+    "userId": "undefined",
+    "resumeHash": "2c02220153eabf63639412a0eefd1c0e",
+    "jdHash": "e7512612292ae895d2be38016f93e540",
+    "matchScore": 83,
+    "classification": "Strong Match",
+    "contactInfo": {
+      "email": "Not found",
+      "phone": "Not found"
+    },
+    "candidateName": "Aarav Reddy",
+    "jdSkills": [
+      "sql",
+      "rest",
+      "machine learning",
+      "git",
+      "python",
+      "java"
+    ],
+    "matchedSkills": [
+      "sql",
+      "rest",
+      "git",
+      "python",
+      "java"
+    ],
+    "missingSkills": [
+      "machine learning"
+    ],
+    "summary": "Matches 5 out of 6 key requirements.",
+    "commonKeywords": [
+      "hyderabad",
+      "summary",
+      "b",
+      "tech",
+      "computer",
+      "science",
+      "java",
+      "python",
+      "data",
+      "structures",
+      "algorithms",
+      "java",
+      "python",
+      "sql",
+      "git"
+    ],
+    "timestamp": "2026-04-14T18:44:07.679Z"
+  },
+  {
+    "fileName": "Resume_1_Eligible.pdf",
+    "userId": "mohammadsadiq0352@gmail.com",
+    "resumeHash": "085279a2a828a6455f26a197b31cc228",
+    "jdHash": "e7512612292ae895d2be38016f93e540",
+    "matchScore": 15,
+    "classification": "Not Suitable",
+    "contactInfo": {
+      "email": "Not found",
+      "phone": "2026022109405"
+    },
+    "candidateName": "ReportLab PDF",
+    "jdSkills": [
+      "sql",
+      "rest",
+      "machine learning",
+      "git",
+      "python",
+      "java"
+    ],
+    "matchedSkills": [],
+    "missingSkills": [
+      "sql",
+      "rest",
+      "machine learning",
+      "git",
+      "python",
+      "java"
+    ],
+    "summary": "No direct technical skill matches found for this position.",
+    "commonKeywords": [
+      "b",
+      "3",
+      "1"
+    ],
+    "timestamp": "2026-04-14T20:06:20.132Z"
+  },
+  {
+    "fileName": "Resume_1_Eligible.pdf",
+    "userId": "mohammadsadiq9949@gmail.com",
+    "resumeHash": "085279a2a828a6455f26a197b31cc228",
+    "jdHash": "0d77994590910abcdc01d0322451435a",
+    "matchScore": 15,
+    "classification": "Not Suitable",
+    "contactInfo": {
+      "email": "Not found",
+      "phone": "2026022109405"
+    },
+    "candidateName": "ReportLab PDF",
+    "jdSkills": [
+      "javascript",
+      "sql",
+      "api",
+      "git",
+      "python",
+      "java"
+    ],
+    "matchedSkills": [],
+    "missingSkills": [
+      "javascript",
+      "sql",
+      "api",
+      "git",
+      "python",
+      "java"
+    ],
+    "summary": "No direct technical skill matches found for this position.",
+    "commonKeywords": [
+      "e",
+      "s",
+      "3"
+    ],
+    "timestamp": "2026-04-24T14:50:41.997Z"
+  }
+]
